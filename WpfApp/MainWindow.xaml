@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp" d:DataContext="{d:DesignInstance Type=local:MainWindowViewModel}"
+        mc:Ignorable="d"
+        Title="{Binding Title}" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button
+            Margin="4"
+            Command="{Binding RunTaskCommand}"
+            Content="Run Task">
+        </Button>
+        <!--<ContentControl prism:RegionManager.RegionName="ContentRegion" />-->
+        <ListBox
+            Grid.Row="1"
+            Margin="4"
+            ItemsSource="{Binding Items}">
+        </ListBox>
+    </Grid>
+</Window>
