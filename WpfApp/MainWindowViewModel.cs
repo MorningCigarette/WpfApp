@@ -55,7 +55,7 @@ namespace WpfApp
             {
                 while (true)
                 {
-                    Dispatcher.CurrentDispatcher.Invoke(() =>
+                    _dispatcher.Invoke(() =>
                     {
                         Items.Add($"while循环开始 in {nameof(RunAsync)} at {DateTime.Now}");
                     });
